@@ -1,0 +1,360 @@
+:root {
+  --ink: #17233b;
+  --ink-soft: #3d4a63;
+  --paper: #f6f5f1;
+  --paper-raised: #ffffff;
+  --brass: #a5762f;
+  --brass-dark: #7e5a22;
+  --line: #dfdcd2;
+  --shadow: 0 10px 30px rgba(23, 35, 59, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+}
+
+.app {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--ink);
+  padding: 0 32px;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.nav-brand a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--brass);
+  color: var(--brass);
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.brand-text {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 16px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.arrow {
+  font-size: 0.55rem;
+  color: var(--brass);
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--paper-raised);
+  min-width: 230px;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  border-top: 2px solid var(--brass);
+  z-index: 10;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 11px 18px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.94rem;
+}
+
+.dropdown-link:hover {
+  background-color: #f1ede3;
+  color: var(--brass-dark);
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  background-color: var(--ink);
+  color: #fff;
+  padding: 88px 32px 96px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--brass);
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  color: #fff;
+}
+
+.hero p {
+  max-width: 560px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-rule {
+  width: 64px;
+  height: 2px;
+  background-color: var(--brass);
+  margin: 28px auto 0;
+}
+
+/* ---------- Quick links grid on home ---------- */
+.quick-links {
+  max-width: 1040px;
+  margin: -48px auto 0;
+  padding: 0 32px 64px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.quick-link-card {
+  background-color: var(--paper-raised);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 26px 24px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.quick-link-card:hover {
+  border-bottom-color: var(--brass);
+  transform: translateY(-2px);
+}
+
+.quick-link-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.quick-link-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ---------- Pages ---------- */
+main {
+  flex: 1;
+}
+
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 56px 28px 72px;
+}
+
+.page-eyebrow {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--brass-dark);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.page h1 {
+  color: var(--ink);
+  font-size: 2.1rem;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.page-content p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 440px;
+  margin-top: 8px;
+  background-color: var(--paper-raised);
+  padding: 26px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 0.98rem;
+  font-family: inherit;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--brass);
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--brass-dark);
+}
+
+.contact-details {
+  margin-bottom: 28px;
+}
+
+.success-msg {
+  color: #2f6b3a;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--ink);
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  padding: 26px 20px;
+  font-size: 0.85rem;
+}
+
+.site-footer strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 20px;
+  }
+  .nav-list {
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
